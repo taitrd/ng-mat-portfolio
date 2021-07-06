@@ -1,0 +1,30 @@
+<!-- Start wrapper -->
+<div id="wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image">
+              </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1>Không thể truy cập trang lúc này.</h1>
+                    <div [hidden]="!error403" class="alert alert-danger">Hệ thống đang bảo trì, vui lòng quay lại sau.
+                    </div>
+                    <p>{{errorMessage}}</p>
+                    <a class="btn btn-sm btn-default" href="javascript:void(0)" routerLink="/">Quay lại trang chính</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End wrapper -->
+  

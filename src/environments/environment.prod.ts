@@ -1,3 +1,8 @@
+import { envDefault } from './environment.def';
+
 export const environment = {
-  production: true
+  ...envDefault,
+  production: true,
+  appPrefix: 'taitrd',
+  appTitle: 'Tai Tran',
 };

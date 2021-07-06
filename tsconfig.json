@@ -15,6 +15,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core": ["src/app/core/index.ts"],
+      "@core/*": ["src/app/core/*"],
+      "@features": ["src/app/features/index.ts"],
+      "@features/*": ["src/app/features/*"],
+      "@shared": ["src/app/shared/index.ts"],
+      "@shared/*": ["src/app/shared/*"],
+      "@layouts": ["src/app/layouts/index.ts"],
+      "@layouts/*": ["src/app/layouts/*"],
+      "@testing": ["testing"],
+      "@testing/*": ["testing/*"],
+      "@env": ["src/environments/index.ts"],
+      "@env/*": ["src/environments/*"]
+    }
   }
 }

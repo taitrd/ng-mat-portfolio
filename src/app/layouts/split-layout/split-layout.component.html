@@ -1,0 +1,18 @@
+<div class="" fxLayout="column" fxLayoutAlign="start none" [ngStyle]="ngLayoutStyle" >
+  <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutAlign="start none">
+    <div #sidebar [fxFlex]="left" fxLayout="column" fxLayoutAlign="center center" class="mat-elevation-z10 mat-bg-lg-tbr" [ngStyle]="ngSidebarStyle" >
+      <router-outlet name="left-outlet"></router-outlet>
+    </div>
+    <div [fxFlex]="right" fxLayout="column" fxLayoutAlign="start none" [ngStyle]="ngMainStyle">
+      <div fxLayout="row" fxLayoutAlign="start none" fxFlexOffset="30px">
+        <div fxFlex fxLayout="column" fxLayoutAlign="start none" fxFlexOffset="30px">
+          <div fxFlex>
+            <router-outlet></router-outlet>
+          </div>
+          <div fxFlexOffset="30px"></div> 
+        </div>
+        <div fxFlexOffset="30px"></div>
+      </div>
+    </div>
+  </div>
+</div>

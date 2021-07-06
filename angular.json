@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-mat-portfolio"
+    }
+  },
+  "defaultProject": "ng-mat-portfolio",
+  "cli": {
+    "analytics": "1e95dcab-5f4e-4a8a-9480-d6d78e21d642"
+  }
 }

@@ -1,0 +1,78 @@
+<div fxLayout="column">
+  <div class="mat-card mat-bg-transparent mat-elevation-z0">
+      <mat-card-title>
+        <span class="mat-h1">Projects</span>
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between start">
+          <div fxFlex="49" fxFlex.xs="100" *ngFor="let item of projects" fxLayout="column" fxLayoutGap="20px">
+            <div></div>
+            <div fxLayout="row" fxLayoutAlign="start center" >
+              <mat-card fxFlex [routerLink]="['./post', item.slug]">
+                <mat-card-title>
+                  <span [routerLink]="['./post', item.slug]" class="mat-h4 mat-body-strong">{{item.title}}</span>
+                </mat-card-title>
+                <mat-card-content class="">
+                  <p>
+                    <mat-chip-list *ngIf="(item.tags | isArray); else tagTextOnly">
+                      <mat-chip selected color="default" *ngFor="let item of item.tags">#{{item}}</mat-chip>
+                    </mat-chip-list>
+                    <ng-template #tagTextOnly>{{item.tags}}</ng-template>
+                  </p>
+                  <p>{{item.description}}</p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+  </div>
+  <div class="mat-card mat-bg-transparent mat-elevation-z0">
+      <mat-card-title>
+        <span class="mat-h1">Skills</span>
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="column" class="mat-h4">
+          <div fxFlex>
+            <mat-chip-list>
+              <ng-container *ngFor="let item of skills">
+                <mat-chip selected color="primary">{{item.title}}</mat-chip>
+              </ng-container>
+            </mat-chip-list>
+          </div>
+        </div>
+      </mat-card-content>
+  </div>
+  <div class="mat-card mat-bg-transparent mat-elevation-z0">
+      <mat-card-title>
+        <span class="mat-h1">Open Sources</span>
+      </mat-card-title>
+      <mat-card-content>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between start">
+          <div *ngFor="let item of sources" fxFlex="100" fxFlex.gt-sm="49" fxLayout="column" fxLayoutGap="10px">
+            <div></div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <mat-card fxFlex>
+                <mat-card-content class="">
+                  <div fxLayout="column" *ngIf="item.meta.github_repo" fxLayoutGap="4px">
+                    <div fxLayout="row wrap" fxLayoutAlign="start center">
+                      <a mat-icon-button [href]="item.meta.github_repo?.html_url" target="_blank">
+                        <i class="fab fa-github fa-2x"></i>
+                      </a>
+                      <a mat-flat-button [href]="item.meta.github_repo?.html_url" target="_blank"><span class="mat-h4 mat-body-strong">{{item.title}}</span></a>
+                    </div>
+                    <span>{{item.description}}</span>
+                    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+                      <span><i class="fa fa-star"></i> {{item.meta.github_repo.stargazers_count}}</span>
+                      <span><i class="fa fa-code-branch"></i> {{item.meta.github_repo.forks_count}}</span>
+                    </div>
+                    <div class="mat-hint"><small>Latest updated {{item.meta.github_repo.updated_at|date}}</small></div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+  </div>
+</div>

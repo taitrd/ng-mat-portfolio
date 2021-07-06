@@ -1,0 +1,19 @@
+<div fxLayout="column">
+  <div class="mat-card mat-bg-transparent mat-elevation-z0">
+    <div fxLayout="row" fxLayoutAlign="start center" class="mat-h1">
+      <a mat-icon-button routerLink="/"><span class="material-icons">arrow_back</span></a>
+      <span class="">{{ post.title }}</span>
+    </div>
+    <mat-card-content>
+      <div fxLayout="column" class="mat-h4">
+        <div fxFlex>
+          <mat-card>
+            <mat-card-content>
+              <div [innerHTML]="post.text|safe:'html'"></div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card-content>
+  </div>
+</div>
