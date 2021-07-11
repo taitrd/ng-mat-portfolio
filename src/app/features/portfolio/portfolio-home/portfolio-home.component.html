@@ -14,8 +14,8 @@
                 </mat-card-title>
                 <mat-card-content class="">
                   <p>
-                    <mat-chip-list *ngIf="(item.tags | isArray); else tagTextOnly">
-                      <mat-chip selected color="default" *ngFor="let item of item.tags">#{{item}}</mat-chip>
+                    <mat-chip-list *ngIf="(item.tags | isArray); else tagTextOnly;">
+                      <mat-chip selected color="default" *ngFor="let item of item.tags| slice:0:2">#{{item}}</mat-chip>
                     </mat-chip-list>
                     <ng-template #tagTextOnly>{{item.tags}}</ng-template>
                   </p>

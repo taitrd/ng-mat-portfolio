@@ -9,6 +9,10 @@
         <div fxFlex>
           <mat-card>
             <mat-card-content>
+              <mat-chip-list *ngIf="(post.tags | isArray); else tagTextOnly">
+                <mat-chip selected color="default" *ngFor="let item of post.tags">{{item}}</mat-chip>
+              </mat-chip-list>
+              <ng-template #tagTextOnly>{{post.tags}}</ng-template>
               <div [innerHTML]="post.text|safe:'html'"></div>
             </mat-card-content>
           </mat-card>
